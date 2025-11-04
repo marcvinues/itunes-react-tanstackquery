@@ -1,15 +1,10 @@
-import React, { useState } from "react";
+import { BrowserRouter } from 'react-router-dom';
+import { AppRouter } from './app/router/Router';
 
-function App(): JSX.Element {
-  const [count, setCount] = useState<number>(0);
-
-  return (
-    <div>
-      <h1>Hello from React + Parcel + TypeScript!</h1>
-      <p>Your app is running successfully.</p>
-      <button onClick={() => setCount(count + 1)}>Count: {count}</button>
-    </div>
-  );
-}
+const App = () => (
+  <BrowserRouter>
+    <AppRouter />
+  </BrowserRouter>
+);
 
 export default App;
