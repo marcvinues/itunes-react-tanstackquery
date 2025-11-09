@@ -21,12 +21,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
   alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@types': path.resolve(__dirname, './src/types'),
-      '@shared': path.resolve(__dirname, './src/shared'),
-      '@app': path.resolve(__dirname, './src/app'),
-      '@services': path.resolve(__dirname, './src/app/context/services'),
-      '@pages': path.resolve(__dirname, './src/pages'),
+      '~': path.resolve(__dirname, 'src'),
     },
   },
   // Build options

@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 import { MainLayout } from '../../layouts/Layout';
-import { PodcastHome } from '../../pages/PodcastHome/PodcastHome.tsx';
-import { ROUTES } from '../config/constants';
+import { PodcastHome } from '../../pages/PodcastHome/PodcastHome';
 import { PodcastDetail } from '../../pages/PodcasDetail/PodcastDetail';
 import { EpisodeDetail } from '../../pages/PodcastEpisode/PodcastEpisode';
+import { ROUTES } from '../config/constants';
 
 export const AppRouter = () => {
   return (

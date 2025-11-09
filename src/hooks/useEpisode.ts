@@ -3,6 +3,7 @@ import { podcastService } from '../app/services/instances';
 import { Episode } from '~/@types/interfaces/podcast';
 import { podcastKeys } from '../app/services/api/queries/queryKeys';
 import { logger } from '../utils/logger';
+import { QUERY_CONFIG } from '../app/services/api/config/clientConfig';
 
 export function useEpisode(podcastId: string | undefined, episodeId: string | undefined) {
   return useQuery<Episode, Error>({
@@ -14,8 +15,8 @@ export function useEpisode(podcastId: string | undefined, episodeId: string | un
       return episode;
     },
     enabled: !!podcastId && !!episodeId,
-    staleTime: 10 * 60 * 1000,
-    gcTime: 30 * 60 * 1000,
-    retry: 2,
+    staleTime: QUERY_CONFIG.STALE_TIME.MEDIUM,
+    gcTime: QUERY_CONFIG.GC_TIME.DEFAULT,
+    retry: QUERY_CONFIG.RETRY.LESS,
   });
 }

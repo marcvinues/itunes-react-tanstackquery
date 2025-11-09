@@ -3,6 +3,7 @@ import { Podcast } from '~/@types/interfaces/podcast';
 import { logger } from '../utils/logger';
 import { podcastService } from '../app/services/instances';
 import { podcastKeys } from '../app/services/api/queries/queryKeys';
+import { QUERY_CONFIG } from '../app/services/api/config/clientConfig';
 
 export function usePodcasts() {
   return useQuery<Podcast[], Error>({
@@ -13,8 +14,8 @@ export function usePodcasts() {
       logger.info('✅ Podcasts fetched successfully', { count: podcasts.length });
       return podcasts;
     },
-    staleTime: 24 * 60 * 60 * 1000,
-    gcTime: 30 * 60 * 1000,
-    retry: 3,
+    staleTime: QUERY_CONFIG.STALE_TIME.VERY_LONG,
+    gcTime: QUERY_CONFIG.GC_TIME.DEFAULT,
+    retry: QUERY_CONFIG.RETRY.DEFAULT,
   });
 }

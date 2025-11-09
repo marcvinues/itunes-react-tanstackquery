@@ -47,6 +47,52 @@
   font-size: 0.875rem;
 }
 
+.card-home__search-history {
+  margin-top: var(--spacing-sm);
+}
+
+.card-home__search-history-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  display: block;
+  margin-bottom: var(--spacing-xs);
+}
+
+.card-home__search-history-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.card-home__search-history-button {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--font-size-xs);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.card-home__search-history-button:hover {
+  background-color: var(--color-background);
+}
+
+.card-home__search-history-clear {
+  font-size: var(--font-size-xs);
+  color: var(--color-error);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  transition: opacity var(--transition-fast);
+}
+
+.card-home__search-history-clear:hover {
+  opacity: 0.7;
+}
+
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
