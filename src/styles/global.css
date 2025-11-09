@@ -1,0 +1,47 @@
+@import './tokens.css';
+@import './reset.css';
+@import './responsive.css';
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width-xl);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.mb-sm {
+  margin-bottom: var(--spacing-sm);
+}
+
+.mb-md {
+  margin-bottom: var(--spacing-md);
+}
+
+.mb-lg {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 0.125rem solid var(--color-primary);
+  outline-offset: 0.125rem;
+}

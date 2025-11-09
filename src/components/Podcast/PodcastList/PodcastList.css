@@ -1,0 +1,13 @@
+.podcast-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+  gap: var(--spacing-md);
+}
+
+.podcast-list__empty {
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  text-align: center;
+  padding: var(--spacing-md);
+}

@@ -1,13 +1,17 @@
 import { Routes, Route } from 'react-router-dom';
 import { MainLayout } from '../../layouts/Layout';
-import { Home } from '../../pages/home';
+import { PodcastHome } from '../../pages/PodcastHome/PodcastHome.tsx';
 import { ROUTES } from '../config/constants';
+import { PodcastDetail } from '../../pages/PodcasDetail/PodcastDetail';
+import { EpisodeDetail } from '../../pages/PodcastEpisode/PodcastEpisode';
 
 export const AppRouter = () => {
   return (
     <Routes>
       <Route element={<MainLayout />}>
-        <Route path={ROUTES.HOME} element={<Home />} />
+        <Route path={ROUTES.HOME} element={<PodcastHome />} />
+        <Route path={ROUTES.PODCAST_DETAIL} element={<PodcastDetail />} />
+        <Route path={ROUTES.EPISODE_DETAIL} element={<EpisodeDetail />} />
       </Route>
     </Routes>
   );

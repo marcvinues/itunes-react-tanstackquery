@@ -24,10 +24,7 @@ export class ApiClient {
     const timeoutId = setTimeout(() => controller.abort(), timeout);
 
     try {
-      const response = await fetch(url, {
-        ...config,
-        signal: controller.signal,
-      });
+      const response = await fetch(url);
 
       clearTimeout(timeoutId);
 

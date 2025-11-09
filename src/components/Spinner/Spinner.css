@@ -1,0 +1,26 @@
+.spinner-container {
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto var(--spacing-md);
+  border: 0.25rem solid var(--color-border);
+  border-top: 0.25rem solid var(--color-primary);
+  border-radius: var(--radius-full);
+  animation: spin 1s linear infinite;
+}
+
+.spinner-text {
+  color: var(--color-text-secondary);
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

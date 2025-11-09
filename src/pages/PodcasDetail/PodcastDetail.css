@@ -1,0 +1,16 @@
+.podcast-detail {
+  padding: var(--spacing-xxl); 
+}
+
+.podcast-detail__grid {
+  display: grid;
+  grid-template-columns: 18.75rem 1fr; 
+  gap: 1.5rem; 
+  align-items: start;
+}
+
+.episode-detail-player__empty {
+  padding: var(--spacing-xxl);
+  text-align: center;
+  color: var(--color-text-secondary);
+}
