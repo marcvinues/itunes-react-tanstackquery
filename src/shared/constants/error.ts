@@ -34,7 +34,7 @@ export class AppError extends Error {
 
   static fromError(error: unknown): AppError {
     if (error instanceof AppError) return error;
-    
+
     if (error instanceof Error) {
       if (error.name === 'AbortError') {
         return new AppError(ErrorCode.TIMEOUT_ERROR, error.message);

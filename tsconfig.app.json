@@ -21,6 +21,6 @@
     },
     "ignoreDeprecations": "6.0"
   },
-  "include": ["src"],
+  "include": ["src", "tests"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

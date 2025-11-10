@@ -1,4 +1,12 @@
-import { Podcast, ITunesTopPodcastsResponse, PodcastRaw, ITunesLookupResponse, PodcastDetail, Episode, ITunesLookupResult } from '~/@types/interfaces/podcast';
+import {
+  Podcast,
+  ITunesTopPodcastsResponse,
+  PodcastRaw,
+  ITunesLookupResponse,
+  PodcastDetail,
+  Episode,
+  ITunesLookupResult,
+} from '~/@types/interfaces/podcast';
 
 export class PodcastAdapter {
   static toDomain(raw: PodcastRaw): Podcast {
@@ -25,13 +33,14 @@ export class PodcastAdapter {
     }
 
     const podcastData = response.results[0];
-    const episodesData = response.results
+    const episodesData = response.results;
 
     const podcast: Podcast = {
       id: podcastData.collectionId?.toString() || podcastData.trackId.toString(),
       title: podcastData.collectionName || podcastData.trackName,
       author: podcastData.artistName,
-      description: podcastData.description || podcastData.shortDescription || 'No description available',
+      description:
+        podcastData.description || podcastData.shortDescription || 'No description available',
       imageUrl: podcastData.artworkUrl600 || podcastData.artworkUrl100 || '',
       category: podcastData.primaryGenreName || 'Unknown',
     };

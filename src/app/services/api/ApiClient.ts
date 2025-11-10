@@ -56,9 +56,9 @@ export class ApiClient {
     } catch (error) {
       const shouldRetry =
         retries > 0 &&
-        (error instanceof Error &&
-          (error.name === 'TypeError' ||
-            (error instanceof AppError && error.code === ErrorCode.SERVER_ERROR)));
+        error instanceof Error &&
+        (error.name === 'TypeError' ||
+          (error instanceof AppError && error.code === ErrorCode.SERVER_ERROR));
 
       if (shouldRetry) {
         logger.warn(`Retrying request. Attempts left: ${retries}`);
@@ -73,7 +73,12 @@ export class ApiClient {
   async get<T>(endpoint: string, config: RequestConfig = {}): Promise<T> {
     const url = endpoint.startsWith('http') ? endpoint : `${this.baseURL}${endpoint}`;
 
-    const { timeout = this.defaultTimeout, retries = 3, retryDelay = 1000, ...fetchConfig } = config;
+    const {
+      timeout = this.defaultTimeout,
+      retries = 3,
+      retryDelay = 1000,
+      ...fetchConfig
+    } = config;
 
     logger.debug(`API GET: ${url}`);
 

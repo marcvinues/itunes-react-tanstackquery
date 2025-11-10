@@ -7,8 +7,6 @@ const config: Config = {
 
   moduleNameMapper: {
     '^~/(.*)$': '<rootDir>/src/$1',
-
-    // CSS / assets mock
     '\\.(css|scss|sass)$': 'identity-obj-proxy',
     '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/tests/__mocks__/fileMock.js',
   },
@@ -16,8 +14,8 @@ const config: Config = {
   setupFilesAfterEnv: ['<rootDir>/tests/setupTests.ts'],
 
   transform: {
-    '^.+\\.(ts|tsx)$': ['ts-jest', { tsconfig: 'tsconfig.json' }],
-  }
+    '^.+\\.(ts|tsx)$': 'ts-jest',
+  },
 };
 
 export default config;
