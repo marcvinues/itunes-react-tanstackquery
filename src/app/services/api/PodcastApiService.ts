@@ -1,11 +1,7 @@
 import { apiClient } from './ApiClient';
 import { PodcastAdapter } from './PodcastAdapter';
-import {
-  Podcast,
-  ITunesTopPodcastsResponse,
-  PodcastDetail,
-  ITunesLookupResponse,
-} from '~/@types/interfaces/podcast';
+import { Podcast, PodcastDetail } from '~/@types/interfaces/podcast';
+import { ITunesLookupResponse, ITunesTopPodcastsResponse } from '~/@types/interfaces/services';
 
 export class PodcastApiService {
   private readonly endpoints = {
