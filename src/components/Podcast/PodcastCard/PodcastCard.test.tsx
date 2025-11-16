@@ -25,7 +25,6 @@ describe('PodcastCard', () => {
       defaultOptions: {
         queries: {
           retry: false,
-          cacheTime: 0,
         },
       },
     });
