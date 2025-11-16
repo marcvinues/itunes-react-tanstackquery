@@ -9,27 +9,16 @@ import './PodcastHome.css';
 
 export const PodcastHome = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchHistory, setSearchHistory] = useState<string[]>([]);
 
   const { data: podcasts, isLoading, error, refetch, isFetching } = usePodcasts();
 
   const filteredPodcasts = useSearchPodcasts(podcasts, searchQuery);
 
-  useEffect(() => {
-    setSearchHistory(searchHistoryService.getHistory());
-  }, []);
-
   const handleSearch = (query: string) => {
     setSearchQuery(query);
     if (query.trim()) {
       searchHistoryService.addSearch(query);
-      setSearchHistory(searchHistoryService.getHistory());
     }
-  };
-
-  const handleClearHistory = () => {
-    searchHistoryService.clearHistory();
-    setSearchHistory([]);
   };
 
   if (isLoading) {
@@ -46,7 +35,7 @@ export const PodcastHome = () => {
         <h1 className="card-home__title">Top Podcasts</h1>
         <div className="card-home__controls">
           {isFetching && !isLoading && <div className="card-home__spinner-small" />}
-          <span className="card-home__badge"></span>
+          <span className="card-home__badge">{podcasts?.length}</span>
           <input
             type="search"
             placeholder="Filter podcasts..."
@@ -54,27 +43,6 @@ export const PodcastHome = () => {
             onChange={e => handleSearch(e.target.value)}
             className="card-home__search-input"
           />
-          {searchHistory.length > 0 && (
-            <div className="card-home__search-history">
-              <small className="card-home__search-history-label">Recent searches:</small>
-
-              <div className="card-home__search-history-list">
-                {searchHistory.slice(0, 5).map((q, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setSearchQuery(q)}
-                    className="card-home__search-history-button"
-                  >
-                    {q}
-                  </button>
-                ))}
-
-                <button onClick={handleClearHistory} className="card-home__search-history-clear">
-                  Clear
-                </button>
-              </div>
-            </div>
-          )}
         </div>
       </div>
 
