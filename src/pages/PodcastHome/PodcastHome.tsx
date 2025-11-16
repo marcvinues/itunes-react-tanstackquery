@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { usePodcasts } from '../../hooks/usePodcasts';
 import { PodcastList } from '../../components/Podcast/PodcastList/PodcasList';
 import { useSearchPodcasts } from '../../hooks/useSearchPodcast';
@@ -45,7 +45,6 @@ export const PodcastHome = () => {
           />
         </div>
       </div>
-
       <PodcastList podcasts={filteredPodcasts} />
     </div>
   );

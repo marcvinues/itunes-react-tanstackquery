@@ -1,7 +1,7 @@
 import { useQueryClient } from '@tanstack/react-query';
 import { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Podcast } from '~/@types/interfaces/podcast';
+import { Podcast } from '../../../@types/interfaces/podcast';
 import { podcastKeys } from '../../../app/services/api/queries/queryKeys';
 import { podcastService } from '../../../app/services/instances';
 import './PodcastCard.css';

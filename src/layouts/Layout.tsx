@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
-import { Header } from '~/components/Header/header';
-import { useNavigation } from '~/hooks/useNavigation';
+import { Header } from '../components/Header/header';
+import { useNavigation } from '../hooks/useNavigation';
 
 export const MainLayout = () => {
   useNavigation();

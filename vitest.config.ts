@@ -7,7 +7,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: './src/setupTests.ts',
+    setupFiles: './setupTests.ts',
     css: true,
     coverage: {
       provider: 'v8',
@@ -18,7 +18,7 @@ export default defineConfig({
         '**/*.test.{ts,tsx}',
         '**/*.config.{ts,js}',
         '**/index.ts',
-        'src/main.tsx',
+        'src/index.tsx',
       ],
     },
   },

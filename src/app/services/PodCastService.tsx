@@ -1,4 +1,4 @@
-import { Episode, Podcast, PodcastDetail } from '~/@types/interfaces/podcast';
+import { Episode, Podcast, PodcastDetail } from '../../@types/interfaces/podcast';
 import { PodcastApiService } from './api/PodcastApiService';
 
 export class PodcastService {

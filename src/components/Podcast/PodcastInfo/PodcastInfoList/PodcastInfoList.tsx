@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Episode } from '~/@types/interfaces/podcast';
+import { Episode } from '../../../../@types/interfaces/podcast';
 import { formatDate, formatDuration } from '../../../../utils/common';
 import './PodcastInfoList.css';
 

@@ -1,7 +1,10 @@
 import { apiClient } from './ApiClient';
 import { PodcastAdapter } from './PodcastAdapter';
-import { Podcast, PodcastDetail } from '~/@types/interfaces/podcast';
-import { ITunesLookupResponse, ITunesTopPodcastsResponse } from '~/@types/interfaces/services';
+import { Podcast, PodcastDetail } from '../../../@types/interfaces/podcast';
+import {
+  ITunesLookupResponse,
+  ITunesTopPodcastsResponse,
+} from '../../../@types/interfaces/services';
 
 export class PodcastApiService {
   private readonly endpoints = {
@@ -11,10 +14,6 @@ export class PodcastApiService {
 
   private buildUrl(endpoint: string): string {
     const fullUrl = `${this.endpoints.base_url}${endpoint}`;
-
-    if (import.meta.env.DEV) {
-      return `${endpoint}`;
-    }
 
     return fullUrl;
   }

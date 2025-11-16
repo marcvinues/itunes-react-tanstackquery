@@ -1,10 +1,10 @@
-import { Podcast, PodcastDetail, Episode } from '~/@types/interfaces/podcast';
+import { Podcast, PodcastDetail, Episode } from '../../../@types/interfaces/podcast';
 import {
   ITunesLookupResponse,
   ITunesLookupResult,
   ITunesTopPodcastsResponse,
   PodcastRaw,
-} from '~/@types/interfaces/services';
+} from '../../../@types/interfaces/services';
 
 export class PodcastAdapter {
   static toDomain(raw: PodcastRaw): Podcast {

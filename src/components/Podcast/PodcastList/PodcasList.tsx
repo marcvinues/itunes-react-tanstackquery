@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { Podcast } from '~/@types/interfaces/podcast';
+import { Podcast } from '../../../@types/interfaces/podcast';
 import { PodcastCard } from '../PodcastCard/PodcastCard';
 import './PodcastList.css';
 

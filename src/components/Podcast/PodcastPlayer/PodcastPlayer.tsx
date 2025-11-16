@@ -1,5 +1,5 @@
 import { memo, useRef, useState, useEffect } from 'react';
-import { Episode } from '~/@types/interfaces/podcast';
+import { Episode } from '../../../@types/interfaces/podcast';
 import { formatDate, formatDuration, formatTime } from '../../../utils/common';
 import './PodcastPlayer.css';
 

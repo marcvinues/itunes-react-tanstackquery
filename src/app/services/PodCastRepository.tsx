@@ -1,6 +1,6 @@
-import { logger } from '~/utils/logger';
+import { logger } from '../../utils/logger';
 import { PodcastApiService } from './api/PodcastApiService';
-import { Podcast } from '~/@types/interfaces/podcast';
+import { Podcast } from '../../@types/interfaces/podcast';
 
 export class PodcastRepository {
   constructor(private apiService: PodcastApiService) {}

@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { Podcast } from '~/@types/interfaces/podcast';
+import { Podcast } from '../@types/interfaces/podcast';
 import { logger } from '../utils/logger';
 import { podcastService } from '../app/services/instances';
 import { podcastKeys } from '../app/services/api/queries/queryKeys';
