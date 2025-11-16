@@ -59,34 +59,4 @@ export class CacheService {
       logger.error('Cache remove error:', error);
     }
   }
-
-  clear(): void {
-    try {
-      this.storage.clear();
-      logger.info('🧹 Cache cleared');
-    } catch (error) {
-      logger.error('Cache clear error:', error);
-    }
-  }
-
-  has(key: string): boolean {
-    return this.get(key) !== null;
-  }
-
-  getKeys(prefix?: string): string[] {
-    const keys: string[] = [];
-    for (let i = 0; i < this.storage.length; i++) {
-      const key = this.storage.key(i);
-      if (key && (!prefix || key.startsWith(prefix))) {
-        keys.push(key);
-      }
-    }
-    return keys;
-  }
-
-  clearPrefix(prefix: string): void {
-    const keys = this.getKeys(prefix);
-    keys.forEach(key => this.remove(key));
-    logger.info(`🧹 Cleared ${keys.length} items with prefix: ${prefix}`);
-  }
 }
