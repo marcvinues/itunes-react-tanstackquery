@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, within } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { EpisodeList } from './PodcastInfoList';
 import type { Episode } from '../../../../@types/interfaces/podcast';
