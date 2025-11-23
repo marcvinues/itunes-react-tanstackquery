@@ -99,4 +99,6 @@ export class ApiClient {
   }
 }
 
-export const apiClient = new ApiClient(process.env.VITE_API_BASE_URL || 'https://itunes.apple.com');
+export const apiClient = new ApiClient(
+  import.meta.env.VITE_API_BASE_URL || 'https://itunes.apple.com'
+);

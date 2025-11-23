@@ -1,6 +1,6 @@
 type LogLevel = 'debug' | 'info' | 'warn' | 'error';
 
-const isDev = process.env.NODE_ENV === 'development';
+const isDev = import.meta.env.NODE_ENV === 'development';
 
 class Logger {
   private log(level: LogLevel, message: string, ...args: unknown[]): void {
